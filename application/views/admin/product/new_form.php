@@ -29,7 +29,7 @@
 
             <div class="card-body">
 
-              <form action="<?php base_url('admin/product/add')?>" method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                   <label for="name">Name*</label>

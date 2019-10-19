@@ -6,6 +6,7 @@ class Products extends CI_Controller {
     parent::__construct();
     $this->load->model("product_model");
     $this->load->library("form_validation");
+    //$this->output->enable_profiler(TRUE);
   }
 
   public function index() {

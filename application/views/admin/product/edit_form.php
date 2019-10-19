@@ -29,7 +29,9 @@
 
             <div class="card-body">
 
-              <form action="<?php base_url('admin/product/add')?>" method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data">
+
+                <input type="hidden" name="id" value="<?php echo $product->product_id;?>">
 
                 <div class="form-group">
                   <label for="name">Name*</label>
@@ -50,6 +52,7 @@
                 <div class="form-group">
                   <label for="image">Image</label>
                   <input class="form-control-file <?php echo form_error('image') ? 'is-invalid' : '';?>" type="file" name="image">
+                  <input type="hidden" name="old_image" value="<?php echo $product->image;?>">
                   <div class="invalid-feedback">
                     <?php echo form_error("image");?>
                   </div>
@@ -57,7 +60,7 @@
 
                 <div class="form-group">
                   <label for="description">Description</label>
-                  <textarea class="form-control <?php echo form_error('description') ? 'is-invalid' : '';?>" name="description" placeholder="Product Description..."></textarea>
+                  <textarea class="form-control <?php echo form_error('description') ? 'is-invalid' : '';?>" name="description" placeholder="Product Description..."><?php echo $product->description;?></textarea>
                   <div class="invalid-feedback">
                     <?php echo form_error("description");?>
                   </div>
